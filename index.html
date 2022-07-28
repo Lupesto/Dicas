@@ -1,0 +1,50 @@
+<html>
+    <script>
+
+
+        function gerarArray(numero) {
+            let vetor = [];
+            for (let i = 0; i < numero; i++) vetor[i] = i + 1;
+
+            vetor.splice(vetor.indexOf(1),1);
+            vetor.splice(vetor.indexOf(numero),1);
+            return vetor;
+        }
+
+
+        function verificaNumeroPrimo(numero){
+            if (numero <0 ) numero = numero*-1;
+            if(numero == 2){
+                console.log("Número é primo")
+            } else if(numero == 1 || numero == 0){
+                console.log("Não é primo");
+            } else {
+                vetor = gerarArray(numero) 
+                for (let i = 0; i < vetor.length; i++) {
+                    if(numero%vetor[i] == 0){
+                        console.log(vetor[i],"Não é primo xx");
+                        break;
+                        
+                    } else if (numero%numero == 0 && numero%1 == 0){
+                        console.log(vetor[i],"número é primo xx"); //ocultar mensagem,só informar após termino array
+                        continue;
+                    } 
+                }                
+            }
+                    
+        }
+
+        console.log(9%2);
+        console.log(9%3)
+
+        /*
+                    //problema com o 9, 15
+        array = gerarArray(100);
+        for (let index = 0; index < array.length; index++) {
+            console.log("--------");
+            console.log(array[index]);
+            verificaNumeroPrimo(array[index]);
+        }
+        */
+    </script>
+</html>
